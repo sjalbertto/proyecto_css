@@ -1,0 +1,66 @@
+[
+    {
+      "name": "Juan Pérez",
+      "position": "Desarrollador Senior",
+      "office": "Madrid",
+      "age": 32,
+      "startDate": "2020-03-15",
+      "salary": 45000
+    },
+    {
+      "name": "María López",
+      "position": "Diseñadora UX",
+      "office": "Barcelona",
+      "age": 28,
+      "startDate": "2021-06-22",
+      "salary": 38000
+    },
+    {
+      "name": "Carlos Rodríguez",
+      "position": "Project Manager",
+      "office": "Valencia",
+      "age": 35,
+      "startDate": "2019-01-10",
+      "salary": 52000
+    },
+    {
+      "name": "Laura Martínez",
+      "position": "Data Scientist",
+      "office": "Sevilla",
+      "age": 30,
+      "startDate": "2022-02-05",
+      "salary": 48000
+    },
+    {
+      "name": "Miguel Sánchez",
+      "position": "Frontend Developer",
+      "office": "Madrid",
+      "age": 26,
+      "startDate": "2021-11-18",
+      "salary": 36000
+    },
+    {
+      "name": "Ana García",
+      "position": "Backend Developer",
+      "office": "Barcelona",
+      "age": 29,
+      "startDate": "2020-08-03",
+      "salary": 42000
+    },
+    {
+      "name": "Pablo Fernández",
+      "position": "DevOps Engineer",
+      "office": "Valencia",
+      "age": 33,
+      "startDate": "2018-05-27",
+      "salary": 50000
+    },
+    {
+      "name": "Elena Torres",
+      "position": "QA Tester",
+      "office": "Sevilla",
+      "age": 27,
+      "startDate": "2022-04-15",
+      "salary": 34000
+    }
+  ]
