@@ -22,5 +22,14 @@ window.addEventListener('DOMContentLoaded', event => {
             localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
         });
     }
+    const users = JSON.parse(localStorage.getItem('users')) || [];
+    
+    const totalUsers = users.length;
+    
+    const blockedUsers = users.filter(user => user.blocked).length;
+    
+    document.getElementById('totalUsers').textContent = totalUsers;
+    document.getElementById('blockedUsers').textContent = blockedUsers;
 
+    
 });

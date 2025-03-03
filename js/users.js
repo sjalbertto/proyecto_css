@@ -88,10 +88,11 @@ function populateTable(users) {
       <td>${formattedDate}</td>
       <td>${user.country}</td>
       <td>${user.city}</td>
-      <td class="actions-cell" style="min-width: 200px;">
+      <td class="actions-cell" style="min-width: 250px;">
         <button class="btn btn-sm btn-primary modify-user" data-index="${index}">edit</button>
         <button class="btn btn-sm ${isBlocked ? 'btn-info' : 'btn-warning'} toggle-block-user" data-index="${index}" style="width: 70px;">${isBlocked ? "unblock" : "block"}</button>
         <button class="btn btn-sm btn-danger delete-user" data-index="${index}">delete</button>
+        <button class="btn btn-sm btn-secondary see-posts" data-index="${index}">see posts</button>
       </td>
     `;
     
@@ -110,60 +111,104 @@ function populateTable(users) {
   document.querySelectorAll('.delete-user').forEach(button => {
     button.addEventListener('click', deleteUser);
   });
+
+  document.querySelectorAll('.see-posts').forEach(button => {
+    button.addEventListener('click', seePosts);
+  });
 }
+
 
 function toggleBlockUser(event) {
   const index = event.target.getAttribute('data-index');
   let users = JSON.parse(localStorage.getItem('users')) || [];
   
-  // Asegúrate de que el usuario existe
   if (users[index]) {
-    // Cambiar el estado de bloqueo
-    users[index].blocked = !users[index].blocked;
+    const modalElement = document.getElementById('confirmModal');
+    const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
     
-    // Guardar los cambios
-    localStorage.setItem('users', JSON.stringify(users));
+    const modalBody = modalElement.querySelector('.modal-body');
+    modalBody.textContent = `Are you sure you want to ${users[index].blocked ? 'unblock' : 'block'} this user?`;
     
-    // Actualizar el texto del botón sin cambiar su ancho
-    const button = event.target;
-    const row = button.closest('tr'); // Obtener la fila completa
+    const confirmBtn = document.getElementById('confirmActionBtn');
+    confirmBtn.addEventListener('click', function handler() {
+
+      users[index].blocked = !users[index].blocked;
+      localStorage.setItem('users', JSON.stringify(users));
+      
+      const button = event.target;
+      const row = button.closest('tr');
+
+      if (users[index].blocked) {
+
+        button.textContent = "unblock";
+        button.classList.remove('btn-warning');
+        button.classList.add('btn-info');
+        row.classList.add('opacity-50');
+
+      } else {
+        button.textContent = "block";
+        button.classList.remove('btn-info');
+        button.classList.add('btn-warning');
+        row.classList.remove('opacity-50');
+      }
+      
+      modalInstance.hide();
+    }, { once: true });
     
-    if (users[index].blocked) {
-      button.textContent = "unblock";
-      button.classList.remove('btn-warning');
-      button.classList.add('btn-info');
-      row.classList.add('opacity-50'); // Añadir opacidad a la fila
-    } else {
-      button.textContent = "block";
-      button.classList.remove('btn-info');
-      button.classList.add('btn-warning');
-      row.classList.remove('opacity-50'); // Restaurar opacidad normal
-    }
+    // Muestra el modal
   }
 }
 
-// elimina un usuario
 function deleteUser(event) {
   const index = parseInt(event.target.getAttribute('data-index'));
   let users = [];
-
+  
   try {
     users = JSON.parse(localStorage.getItem('users') || '[]');
   } catch (error) {
-      console.error("error:", error);
-      return;
+    console.error("error:", error);
+    return;
   }
+  
+  const modalElement = document.getElementById('confirmModal');
+  const modalInstance = bootstrap.Modal.getInstance(modalElement) || new bootstrap.Modal(modalElement);
+  
+  const modalBody = modalElement.querySelector('.modal-body');
+  modalBody.textContent = 'Are you sure you want to delete this user?';
+  
+  const confirmBtn = document.getElementById('confirmActionBtn');
+  confirmBtn.addEventListener('click', function handler() {
 
-  users.splice(index, 1);
-  localStorage.setItem('users', JSON.stringify(users));
-  refreshTableAndDataTable(users);
+    users.splice(index, 1);
+    localStorage.setItem('users', JSON.stringify(users));
+    refreshTableAndDataTable(users);
+
+    modalInstance.hide();
+  }, { once: true });
+  
+  modalInstance.show();
 }
+
 
 // función para modificar usuario
 function modifyUser(event) {
   const index = event.target.getAttribute('data-index');
   window.location.href = `forms.html?index=${index}`;
 }
+
+// ver posts
+function seePosts(event) {
+  const index = event.target.getAttribute('data-index');
+  const users = JSON.parse(localStorage.getItem('users')) || [];
+  
+  if (users[index]) {
+    const user = users[index];
+    const username = `${user.firstName} ${user.lastName}`;
+
+    window.location.href = `posts.html?username=${encodeURIComponent(username)}`;
+  }
+}
+
 
 
 // refresca la tabla y reinicia datatables

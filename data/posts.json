@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "title": "Importance of Responsive Design",
+        "date": "2025-03-05",
+        "isBlocked": false,
+        "content": "<h2>Contenido real aquí...</h2><figure><img src='images/tulipan.jpeg' style='max-width: 100%; height: auto;' alt='Tulipán de diseño elegante'></figure>"
+    },
+    {
+        "id": 2,
+        "title": "CSS Animations",
+        "date": "2025-04-12",
+        "isBlocked": true,
+        "content": "<p>Más contenido aquí...</p><img src='images/lirio-del-valle.jpg' style='max-width: 100%; height: auto;'>"
+    }
+]

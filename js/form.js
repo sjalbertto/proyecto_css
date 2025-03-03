@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
   const togglePasswordButton = document.getElementById('togglePassword');
   const passwordField = document.getElementById('password');
-  const eyeIcon = document.getElementById('eyeIcon');
+  const eyeIcon = document.getElementById('passwordEyeIcon');
+
   
   // Añadir el evento de clic al botón de mostrar/ocultar
   if (togglePasswordButton && passwordField && eyeIcon) {
@@ -100,6 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (index !== null) {
       users[index] = newUser;
       alert('Usuario modificado con éxito');
+
     } else {
       // Si no, añade uno nuevo
       users.push(newUser);
@@ -107,6 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     localStorage.setItem('users', JSON.stringify(users));
-    window.location.href = 'users.html'; // Redirige a la tabla de usuarios
+    window.location.href = 'users.html'; 
   }
 });
