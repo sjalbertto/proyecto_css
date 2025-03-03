@@ -16,65 +16,30 @@
   
   <body>
     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-
-        <a class="navbar-brand ps-3" href="index.html">Blogpost</a>
-
-      <button id="sidebarToggle" class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="list-unstyled d-flex mb-0">
-        <li>
-          <a href="posts.html" class="nav-link text-light fw-bold ms-3 my-auto">Posts</a>
-        </li>
-        <li>
-          <a href="users.html" class="nav-link text-light fw-bold ms-3 my-auto">Users</a>
-        </li>
-      </ul>
-
+      <!-- Navbar Brand-->
+      <a class="navbar-brand ps-3" href="index.html">Start Bootstrap</a>
+      <!-- Sidebar Toggle-->
+      <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
+      <!-- Navbar Search-->
       <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
-        <div class="input-group">
-          <input
-            class="form-control"
-            type="text"
-            placeholder="Buscar..."
-            aria-label="Buscar..."
-            aria-describedby="btnNavbarSearch"
-          />
-          <button class="btn btn-primary" id="btnNavbarSearch" type="button">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
+          <div class="input-group">
+              <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
+              <button class="btn btn-primary" id="btnNavbarSearch" type="button"><i class="fas fa-search"></i></button>
+          </div>
       </form>
-
+      <!-- Navbar-->
       <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
-        <li class="nav-item me-2 d-none d-md-block">
-          <button class="btn btn-outline-light" id="darkModeToggle">
-            <i class="fas fa-moon"></i>
-          </button>
-        </li>
-        <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            id="navbarDropdown"
-            href="#"
-            role="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            <i class="fas fa-user fa-fw"></i>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#!">Ajustes</a></li>
-            <li><a class="dropdown-item" href="#!">Actividad</a></li>
-            <li><hr class="dropdown-divider" /></li>
-            <li><a class="dropdown-item" href="#!">Cerrar Sesión</a></li>
-          </ul>
-        </li>
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
+              <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="#!">Settings</a></li>
+                  <li><a class="dropdown-item" href="#!">Activity Log</a></li>
+                  <li><hr class="dropdown-divider" /></li>
+                  <li><a class="dropdown-item" href="#!">Logout</a></li>
+              </ul>
+          </li>
       </ul>
-    </nav>
+  </nav>
 
 
     <div id="layoutSidenav">
@@ -165,35 +130,54 @@
             </ol>
 
             <div class="container mt-4">
-                <h1 class="mb-4">Add User</h1>
-                <form id="userForm">
-                  <div class="mb-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="text" class="form-control" id="name" required />
-                  </div>
-                  <div class="mb-3">
-                    <label for="position" class="form-label">Position</label>
-                    <input type="text" class="form-control" id="position" required />
-                  </div>
-                  <div class="mb-3">
-                    <label for="office" class="form-label">Office</label>
-                    <input type="text" class="form-control" id="office" required />
-                  </div>
-                  <div class="mb-3">
-                    <label for="age" class="form-label">Age</label>
-                    <input type="number" class="form-control" id="age" required />
-                  </div>
-                  <div class="mb-3">
-                    <label for="startDate" class="form-label">Start Date</label>
-                    <input type="date" class="form-control" id="startDate" required />
-                  </div>
-                  <div class="mb-3">
-                    <label for="salary" class="form-label">Salary</label>
-                    <input type="number" class="form-control" id="salary" required />
-                  </div>
-                  <button type="submit" class="btn btn-primary">Save</button>
-                  <a href="users.html" class="btn btn-secondary">Cancel</a>
-          </div>
+              <div class="row justify-content-center">
+                <div class="col-md-8 col-lg-6">
+                  <form id="userForm">
+                    <div class="mb-3">
+                      <label for="firstName" class="form-label">First Name</label>
+                      <input type="text" class="form-control" id="firstName" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="lastName" class="form-label">Last Name</label>
+                      <input type="text" class="form-control" id="lastName" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="birthDate" class="form-label">Date of Birth</label>
+                      <input type="date" class="form-control" id="birthDate" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="country" class="form-label">Country of Residence</label>
+                      <input type="text" class="form-control" id="country" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="city" class="form-label">City of Residence</label>
+                      <input type="text" class="form-control" id="city" required />
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <div class="input-group">
+                        <input type="password" class="form-control" id="password" required />
+                        <button class="btn btn-outline-secondary" type="button" id="togglePassword">
+                          <i class="fas fa-eye" id="passwordEyeIcon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="confirmPassword" class="form-label">Confirm Password</label>
+                      <div class="input-group">
+                        <input type="password" class="form-control" id="confirmPassword" required />
+                        <button class="btn btn-outline-secondary" type="button" id="toggleConfirmPassword">
+                          <i class="fas fa-eye" id="confirmPasswordEyeIcon"></i>
+                        </button>
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                  </form>
+                </div>
         </main>
 
                 <!-- Footer -->

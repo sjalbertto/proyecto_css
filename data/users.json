@@ -1,66 +1,74 @@
 [
-    {
-      "name": "Juan Pérez",
-      "position": "Desarrollador Senior",
-      "office": "Madrid",
-      "age": 32,
-      "startDate": "2020-03-15",
-      "salary": 45000
-    },
-    {
-      "name": "María López",
-      "position": "Diseñadora UX",
-      "office": "Barcelona",
-      "age": 28,
-      "startDate": "2021-06-22",
-      "salary": 38000
-    },
-    {
-      "name": "Carlos Rodríguez",
-      "position": "Project Manager",
-      "office": "Valencia",
-      "age": 35,
-      "startDate": "2019-01-10",
-      "salary": 52000
-    },
-    {
-      "name": "Laura Martínez",
-      "position": "Data Scientist",
-      "office": "Sevilla",
-      "age": 30,
-      "startDate": "2022-02-05",
-      "salary": 48000
-    },
-    {
-      "name": "Miguel Sánchez",
-      "position": "Frontend Developer",
-      "office": "Madrid",
-      "age": 26,
-      "startDate": "2021-11-18",
-      "salary": 36000
-    },
-    {
-      "name": "Ana García",
-      "position": "Backend Developer",
-      "office": "Barcelona",
-      "age": 29,
-      "startDate": "2020-08-03",
-      "salary": 42000
-    },
-    {
-      "name": "Pablo Fernández",
-      "position": "DevOps Engineer",
-      "office": "Valencia",
-      "age": 33,
-      "startDate": "2018-05-27",
-      "salary": 50000
-    },
-    {
-      "name": "Elena Torres",
-      "position": "QA Tester",
-      "office": "Sevilla",
-      "age": 27,
-      "startDate": "2022-04-15",
-      "salary": 34000
-    }
-  ]
+  {
+    "firstName": "Juan",
+    "lastName": "Pérez",
+    "email": "juan.perez@example.com",
+    "birthDate": "1991-07-22",
+    "country": "Spain",
+    "city": "Madrid",
+    "password": "Juan123!"
+  },
+  {
+    "firstName": "María",
+    "lastName": "López",
+    "email": "maria.lopez@example.com",
+    "birthDate": "1995-03-10",
+    "country": "Spain",
+    "city": "Barcelona",
+    "password": "Maria456!"
+  },
+  {
+    "firstName": "Carlos",
+    "lastName": "Rodríguez",
+    "email": "carlos.rodriguez@example.com",
+    "birthDate": "1988-11-05",
+    "country": "Spain",
+    "city": "Valencia",
+    "password": "Carlos789!"
+  },
+  {
+    "firstName": "Laura",
+    "lastName": "Martínez",
+    "email": "laura.martinez@example.com",
+    "birthDate": "1993-09-15",
+    "country": "Spain",
+    "city": "Sevilla",
+    "password": "Laura321!"
+  },
+  {
+    "firstName": "Miguel",
+    "lastName": "Sánchez",
+    "email": "miguel.sanchez@example.com",
+    "birthDate": "1997-06-30",
+    "country": "Spain",
+    "city": "Madrid",
+    "password": "Miguel654!"
+  },
+  {
+    "firstName": "Ana",
+    "lastName": "García",
+    "email": "ana.garcia@example.com",
+    "birthDate": "1994-12-18",
+    "country": "Spain",
+    "city": "Barcelona",
+    "password": "Ana987!"
+  },
+  {
+    "firstName": "Pablo",
+    "lastName": "Fernández",
+    "email": "pablo.fernandez@example.com",
+    "birthDate": "1990-02-27",
+    "country": "Spain",
+    "city": "Valencia",
+    "password": "Pablo159!"
+  },
+  {
+    "firstName": "Elena",
+    "lastName": "Torres",
+    "email": "elena.torres@example.com",
+    "birthDate": "1996-04-05",
+    "country": "Spain",
+    "city": "Sevilla",
+    "password": "Elena753!"
+  }
+]
