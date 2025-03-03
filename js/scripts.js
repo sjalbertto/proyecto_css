@@ -9,27 +9,24 @@
 
 window.addEventListener('DOMContentLoaded', event => {
 
-    // Toggle the side navigation
+    // Código para el sidebar...
     const sidebarToggle = document.body.querySelector('#sidebarToggle');
     if (sidebarToggle) {
-        // Uncomment Below to persist sidebar toggle between refreshes
-        // if (localStorage.getItem('sb|sidebar-toggle') === 'true') {
-        //     document.body.classList.toggle('sb-sidenav-toggled');
-        // }
         sidebarToggle.addEventListener('click', event => {
             event.preventDefault();
             document.body.classList.toggle('sb-sidenav-toggled');
             localStorage.setItem('sb|sidebar-toggle', document.body.classList.contains('sb-sidenav-toggled'));
         });
     }
-    const users = JSON.parse(localStorage.getItem('users')) || [];
-    
-    const totalUsers = users.length;
-    
-    const blockedUsers = users.filter(user => user.blocked).length;
-    
-    document.getElementById('totalUsers').textContent = totalUsers;
-    document.getElementById('blockedUsers').textContent = blockedUsers;
 
-    
+    // Contador de publicaciones
+    const posts = JSON.parse(localStorage.getItem('posts')) || [];
+    const totalPosts = posts.length;
+    const blockedPosts = posts.filter(post => post.isBlocked).length;
+    console.log(blockedPosts)
+
+    // Asegúrate de tener en tu HTML elementos con estos IDs para mostrar los contadores
+    document.getElementById('totalPosts').textContent = totalPosts;
+    document.getElementById('blockedPosts').textContent = blockedPosts;
+
 });

@@ -82,19 +82,24 @@ function populateTable(users) {
     const formattedDate = new Date(user.birthDate).toLocaleDateString('es-ES');
     
     row.innerHTML = `
-      <td>${user.firstName}</td>
-      <td>${user.lastName}</td>
-      <td>${user.email}</td>
-      <td>${formattedDate}</td>
-      <td>${user.country}</td>
-      <td>${user.city}</td>
-      <td class="actions-cell" style="min-width: 250px;">
+    <td>${user.firstName}</td>
+    <td>${user.lastName}</td>
+    <td>${user.email}</td>
+    <td>${formattedDate}</td>
+    <td>${user.country}</td>
+    <td>${user.city}</td>
+    <td class="actions-cell" style="min-width: 250px;">
+      <div class="d-flex flex-wrap gap-2">
         <button class="btn btn-sm btn-primary modify-user" data-index="${index}">edit</button>
-        <button class="btn btn-sm ${isBlocked ? 'btn-info' : 'btn-warning'} toggle-block-user" data-index="${index}" style="width: 70px;">${isBlocked ? "unblock" : "block"}</button>
+        <button class="btn btn-sm ${isBlocked ? 'btn-info' : 'btn-warning'} toggle-block-user" data-index="${index}">
+          ${isBlocked ? "unblock" : "block"}
+        </button>
         <button class="btn btn-sm btn-danger delete-user" data-index="${index}">delete</button>
         <button class="btn btn-sm btn-secondary see-posts" data-index="${index}">see posts</button>
-      </td>
-    `;
+      </div>
+    </td>
+  `;
+  
     
     tableBody.appendChild(row);
   });
@@ -156,6 +161,8 @@ function toggleBlockUser(event) {
     }, { once: true });
     
     // Muestra el modal
+    modalInstance.show();
+
   }
 }
 
