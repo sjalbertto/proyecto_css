@@ -122,9 +122,9 @@ function populateTable(users) {
   });
 }
 
-
 function toggleBlockUser(event) {
-  const index = event.target.getAttribute('data-index');
+  const button = event.currentTarget; // Usamos currentTarget para asegurarnos de obtener el botón
+  const index = button.getAttribute('data-index');
   let users = JSON.parse(localStorage.getItem('users')) || [];
   
   if (users[index]) {
@@ -140,16 +140,13 @@ function toggleBlockUser(event) {
       users[index].blocked = !users[index].blocked;
       localStorage.setItem('users', JSON.stringify(users));
       
-      const button = event.target;
       const row = button.closest('tr');
 
       if (users[index].blocked) {
-
         button.textContent = "unblock";
         button.classList.remove('btn-warning');
         button.classList.add('btn-info');
         row.classList.add('opacity-50');
-
       } else {
         button.textContent = "block";
         button.classList.remove('btn-info');
@@ -162,9 +159,9 @@ function toggleBlockUser(event) {
     
     // Muestra el modal
     modalInstance.show();
-
   }
 }
+
 
 function deleteUser(event) {
   const index = parseInt(event.target.getAttribute('data-index'));
